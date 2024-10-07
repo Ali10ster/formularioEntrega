@@ -5,7 +5,7 @@ import {
   DialogContent, DialogContentText, DialogTitle, Grid2,
   Rating, Typography, Divider, Paper, FormControl, FormLabel
 } from '@mui/material';
-import { alignProperty } from '@mui/material/styles/cssUtils';
+
 
 function App() {
   const [data, setData] = useState({
@@ -15,7 +15,7 @@ function App() {
     gender: '',
     favoriteLanguage: '',
     acceptTerms: false,
-    stars: 0, // Ajustar a 0 o un valor por defecto
+    stars: 0, 
   });
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -30,8 +30,8 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (data.acceptTerms) {
-      console.log(data);  // Muestra los datos en la consola
-      setDialogOpen(true); // Abre el diálogo modal
+      console.log(data);  
+      setDialogOpen(true); 
     }
   };
 
@@ -43,7 +43,7 @@ function App() {
       gender: '',
       favoriteLanguage: '',
       acceptTerms: false,
-      stars: 0, // Restablecer el valor de las estrellas
+      stars: 0, 
     });
   };
 
@@ -97,7 +97,7 @@ function App() {
               name="gender"
               value={data.gender}
               onChange={handleChange}
-              row // Esto asegura que se muestre en vertical
+              row 
             >
               
               <FormControlLabel value="male" control={<Radio required />} label="Hombre" />
@@ -107,7 +107,7 @@ function App() {
             </FormControl>
           </Grid2>
 
-          <Grid2 xs={12} md={6}>
+          <Grid2 xs={12} md={6} style={{padding:20}}>
             <Select
               name="favoriteLanguage"
               value={data.favoriteLanguage}
@@ -125,7 +125,7 @@ function App() {
           </Grid2>
           <Divider style={{ width: '100%' }} />
 
-          <Grid2 container spacing={2} justifyContent="center" alignItems="center">
+          <Grid2 container spacing={2} >
             <Grid2 xs={12} md={6}>
               <Typography>Puntúa esta encuesta</Typography>
             </Grid2>
@@ -180,7 +180,7 @@ function App() {
             </Grid2>
           </Grid2>
 
-          {/* Dialobo */}
+          {/* Dialogo */}
           <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
             <DialogTitle>Confirmación</DialogTitle>
             <DialogContent>
